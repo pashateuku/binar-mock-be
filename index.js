@@ -1,12 +1,15 @@
 // import express
 const express = require("express");
 const app = express();
+// import dotenv
+require('dotenv').config();
+
 
 // port config
-const port = 4000;
+const port = process.env.PORT;
 
 // import routing
-const router = require("./router/indexRouter");
+const router = require("./server/router/indexRouter");
 
 // middlewares 
 app.use(express.json());
