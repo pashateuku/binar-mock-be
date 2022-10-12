@@ -30,7 +30,7 @@ const toDoAdd = async (req,res) => {
 
             return res
                 .json({
-                    message: "registration success",
+                    message: "task successfuly added",
                     data: {
                         desc: desc,
                         }
