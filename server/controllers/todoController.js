@@ -7,7 +7,6 @@ const toDoAdd = async (req,res) => {
     try {
         const foreign_id = req.body.foreign_id
         const desc = req.body.desc
-        const status = req.body.status
 
         // check user_4id on database
         const isExist = await user.findOne({
@@ -27,7 +26,7 @@ const toDoAdd = async (req,res) => {
             const newToDo = todo.create({
                 foreign_id: foreign_id,
                 desc: desc,
-                status: status
+                status: false
             })
 
             return res

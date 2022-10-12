@@ -1,7 +1,7 @@
 // import data user pada database untuk register user (add data)
 const { user } = require('../../models');
 
-// controller untuk register
+// controller untuk login
 const loginPost = async (req,res) => {
 
     try {
@@ -12,13 +12,13 @@ const loginPost = async (req,res) => {
             where: { user_4id: user_4id }
         });
 
-        if (!userData) { // dilanjutkan mengecek email, apabila email tidak ditemukan maka:
+        if (!userData) { // dilanjutkan mengecek username, apabila email tidak ditemukan maka:
             return res
                 .json({ message: "username not found" })
                 .status(400)
             }
 
-        if (userData.password !== password) { // dilanjutkan mengecek password, apabila password pada email yg digunakan salah maka:
+        if (userData.password !== password) { // dilanjutkan mengecek password, apabila password pada usernmae yg digunakan salah maka:
             return res
                 .json({ message: "wrong password" })
                 .status(400)
