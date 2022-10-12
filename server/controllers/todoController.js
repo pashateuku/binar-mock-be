@@ -15,13 +15,13 @@ const toDoAdd = async (req,res) => {
             }
         });
 
-        // if user_4id detected on database, then fail the registration
+        // if user_4id is NOT detected on database, then fail the registration
         if(!isExist){
             return res
                 .json({ message: "user not found" })
                 .status(400)
         }
-        // if user_4id NOT detected on database, then write data and notify the user that registration is success
+        // if user_4id detected on database, then write data and notify the user that registration is success
         else{
             const newToDo = todo.create({
                 foreign_id: foreign_id,
@@ -54,20 +54,21 @@ const toDoRemove = async (req,res) => {
     try {
         const id = req.params.id
 
-        // check user_4id on database
+        // check task id on database
         const isExist = await todo.findOne({
             where: {
                 id: id
             }
         });
 
-        // if user_4id detected on database, then fail the registration
+        // if task id is NOT detected on database, then fail the deletion
         if(!isExist){
             return res
                 .json({ message: "To do not found / already deleted" })
                 .status(400)
         }
-        // if user_4id NOT detected on database, then write data and notify the user that registration is success
+
+        // if task id detected on database, then drop data and notify the user that deletion is success
         else{
             const deleteToDo = todo.destroy({
                 where: {
@@ -109,7 +110,7 @@ const toDoChange = async (req,res) => {
                 .json({ message: "Task not found" })
                 .status(400)
         }
-        // if user_4id NOT detected on database, then write data and notify the user that registration is success
+        // if task detected on database, then update task description and notify the user that update is success
         else{
             const updatedRows = todo.update(
                 {
@@ -140,36 +141,54 @@ const toDoChange = async (req,res) => {
     }
 }
 
-// toDoToggle belum beres
 const toDoToggle = async (req,res) => {
 
     try {
         const id = req.params.id
         const status = req.body.status
 
-        // check user_4id on database
+        // check task on database by id
         const isExist = await todo.findOne({
             where: {
                 id: id
             }
         });
 
-        // if user_4id detected on database, then fail the registration
+        // if task not detected on database, then fail the update
         if(!isExist){
             return res
-                .json({ message: "To do not found / already deleted" })
+                .json({ message: "Task not found" })
                 .status(400)
         }
-        // if user_4id NOT detected on database, then write data and notify the user that registration is success
+
+        // validation for status body (value should boolean)
+        if(typeof status !== "boolean"){
+            return res
+                .json({ message: "please fill the right data for status (true or false)" })
+                .status(400)
+        }
+
+        // if task detected on database and pass the validation, then update task status and notify the user that update is success
         else{
-            const deleteToDo = todo.destroy({
-                where: {
-                    id: id
+            const desc = isExist.desc
+            console.log(desc)
+            const updatedRows = todo.update(
+                {
+                  status: status,
+                },
+                {
+                  where: { id: id },
                 }
-            })
+              );
 
             return res
-                .json({ message: "to do deleted" })
+                .json({
+                    message: "desc updated",
+                    data: {
+
+                        status: status,
+                        }
+                    })
                 .status(200)
         }
     }
