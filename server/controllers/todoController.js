@@ -90,6 +90,57 @@ const toDoRemove = async (req,res) => {
     }
 }
 
+const toDoChange = async (req,res) => {
+
+    try {
+        const id = req.params.id
+        const desc = req.body.desc
+
+        // check task on database by id
+        const isExist = await todo.findOne({
+            where: {
+                id: id
+            }
+        });
+
+        // if task not detected on database, then fail the update
+        if(!isExist){
+            return res
+                .json({ message: "Task not found" })
+                .status(400)
+        }
+        // if user_4id NOT detected on database, then write data and notify the user that registration is success
+        else{
+            const updatedRows = todo.update(
+                {
+                  desc: desc,
+                },
+                {
+                  where: { id: id },
+                }
+              );
+
+            return res
+                .json({
+                    message: "desc updated",
+                    data: {
+                        desc: desc,
+                        }
+                    })
+                .status(200)
+        }
+    }
+
+    // if error happened, inform the error log to response
+    catch (error) {
+    return res.status(500).json({
+        message: "error happened",
+        errors: error
+    });
+    }
+}
+
+// toDoToggle belum beres
 const toDoToggle = async (req,res) => {
 
     try {
@@ -136,5 +187,6 @@ const toDoToggle = async (req,res) => {
 module.exports = {
     toDoAdd,
     toDoRemove,
-    toDoToggle
+    toDoChange,
+    toDoToggle,
 };

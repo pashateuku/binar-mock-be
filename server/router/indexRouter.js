@@ -15,6 +15,7 @@ router.post("/login", login.loginPost);
 
 router.post("/todo/create", todo.toDoAdd);
 router.post("/todo/delete/:id", todo.toDoRemove);
+router.post("/todo/update/:id", todo.toDoChange);
 
 
 module.exports = router;
