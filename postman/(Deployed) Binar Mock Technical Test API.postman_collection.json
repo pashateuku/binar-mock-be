@@ -1,0 +1,1452 @@
+{
+	"info": {
+		"_postman_id": "85e4db4b-03d6-42d5-bf89-52becb18ddb1",
+		"name": "(Deployed) Binar Mock Technical Test API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20557546"
+	},
+	"item": [
+		{
+			"name": "Register New Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user_4id",
+							"value": "1235",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://todo-binar-api.herokuapp.com/register",
+					"protocol": "https",
+					"host": [
+						"todo-binar-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success - Registration success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_4id",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3d-z4euL7TL+slUOgDEt1dXJu35Ce4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Oct 2022 19:07:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"registration success\",\n    \"data\": {\n        \"user_4id\": \"1234\"\n    }\n}"
+				},
+				{
+					"name": "Failed - Username given is not numeric",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_4id",
+									"value": "efgh",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"49-kfwfzuvQffFaJKjV1S3+g0eOC8I\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Oct 2022 19:06:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"please only enter numeric characters only for your username\"\n}"
+				},
+				{
+					"name": "Failed - Username already registered",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_4id",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-YZ2g2iEZ607q2hOAxSzujrr9rbE\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Oct 2022 19:07:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"username already registered\"\n}"
+				},
+				{
+					"name": "Failed - Username given is not 4 character",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_4id",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-8PxDfSEW4JK4lLG0hMLiMq2igbU\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Oct 2022 19:08:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"username hasn't reach require character\"\n}"
+				},
+				{
+					"name": "Failed - Password given hasnt reach minimum character",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_4id",
+									"value": "1235",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "passw",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-ROFIGqGlS0UV0zWnyULlVj3XWy4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Oct 2022 19:09:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"password hasn't reach minimum character\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "user_4id",
+							"value": "1235",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://todo-binar-api.herokuapp.com/login",
+					"protocol": "https",
+					"host": [
+						"todo-binar-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success - Login Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_4id",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-wRsLjdUqUTCrj5BqsRjNFTNZbv0\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Oct 2022 19:53:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"login success\",\n    \"data\": {\n        \"token\": 9\n    }\n}"
+				},
+				{
+					"name": "Failed - Wrong Password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_4id",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "bukanpassword",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-1C2wSuSEZjC2f81JrWY1QiduNqI\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Oct 2022 19:53:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"wrong password\"\n}"
+				}
+			]
+		},
+		{
+			"name": "To Do - Show All of User's Task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://todo-binar-api.herokuapp.com/todo/:id",
+					"protocol": "https",
+					"host": [
+						"todo-binar-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"todo",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2",
+							"description": "using account id, which 'id' on 'user' table"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failed - User Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/todo/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"todo",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-AvgRziILRQT4TS+D2lz8Y9KAAHo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Oct 2022 13:07:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"user not found\"\n}"
+				},
+				{
+					"name": "Success - Show Data Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/todo/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"todo",
+								"9"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "347"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15b-h6D5U2rafpp8QfrI2tCxNmH/iO4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Oct 2022 13:10:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"show data success\",\n    \"data\": {\n        \"todo_data\": [\n            {\n                \"id\": 1,\n                \"foreign_id\": \"9\",\n                \"desc\": \"ini todo pertamaku\",\n                \"status\": false,\n                \"createdAt\": \"2022-10-11T20:15:31.500Z\",\n                \"updatedAt\": \"2022-10-11T20:15:31.500Z\"\n            },\n            {\n                \"id\": 3,\n                \"foreign_id\": \"9\",\n                \"desc\": \"ganti to do ketiga\",\n                \"status\": true,\n                \"createdAt\": \"2022-10-11T20:16:26.201Z\",\n                \"updatedAt\": \"2022-10-12T12:31:29.717Z\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "To Do - Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "foreign_id",
+							"value": "2",
+							"description": "your account id",
+							"type": "text"
+						},
+						{
+							"key": "desc",
+							"value": "this is task",
+							"description": "task title / description",
+							"type": "text"
+						},
+						{
+							"key": "todo_id",
+							"value": "",
+							"description": "if value on body null then the value is generated by BE",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://todo-binar-api.herokuapp.com/todo/create",
+					"protocol": "https",
+					"host": [
+						"todo-binar-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"todo",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success - Create To Do",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "foreign_id",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "ini todo ketiga",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/todo/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"todo",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"44-VaUFdYvLuyoGf0A26U/3zdaeTUw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Oct 2022 20:16:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"registration success\",\n    \"data\": {\n        \"desc\": \"ini todo ketiga\"\n    }\n}"
+				},
+				{
+					"name": "Failed - User given not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "foreign_id",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "ini todo ketiga",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/todo/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"todo",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-AvgRziILRQT4TS+D2lz8Y9KAAHo\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Oct 2022 20:17:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"user not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "To Do - Delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://todo-binar-api.herokuapp.com/todo/delete/:todo_id",
+					"protocol": "https",
+					"host": [
+						"todo-binar-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"todo",
+						"delete",
+						":todo_id"
+					],
+					"variable": [
+						{
+							"key": "todo_id",
+							"value": "oo31ixtuSTa3esJn7xMtY",
+							"description": "variable todo_id pada todo table"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success - To Do Deleted",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://todo-binar-api.herokuapp.com/todo/delete/:todo_id",
+							"protocol": "https",
+							"host": [
+								"todo-binar-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todo",
+								"delete",
+								":todo_id"
+							],
+							"variable": [
+								{
+									"key": "todo_id",
+									"value": "oo31ixtuSTa3esJn7xMtY"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1b-FtSdg3yfVLgXSSX9KQKTRztWemU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Oct 2022 05:44:24 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"to do deleted\"\n}"
+				},
+				{
+					"name": "Failed - To Do Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://todo-binar-api.herokuapp.com/todo/delete/:todo_id",
+							"protocol": "https",
+							"host": [
+								"todo-binar-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"todo",
+								"delete",
+								":todo_id"
+							],
+							"variable": [
+								{
+									"key": "todo_id",
+									"value": "oo31ixtuSTa3esJn7xMtY",
+									"description": "variable todo_id pada todo table"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2f-Bxu53ENdTB2D69di+aKyKtimiXU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 14 Oct 2022 05:45:06 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"To do not found / already deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "To Do - Update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "desc",
+							"value": "ini todo yang sudah diganti",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://todo-binar-api.herokuapp.com/todo/update/:id",
+					"protocol": "https",
+					"host": [
+						"todo-binar-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"todo",
+						"update",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "99",
+							"description": "using task automated id, which 'id' in 'todo' table"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success - Task Updated",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "desc",
+									"value": "ganti to do ketiga",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/todo/update/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"todo",
+								"update",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-W7Uf9jn+YquPcnxHeoaPh9Y0Lr4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Oct 2022 11:56:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"desc updated\",\n    \"data\": {\n        \"desc\": \"ganti to do ketiga\"\n    }\n}"
+				},
+				{
+					"name": "Failed - Task Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "desc",
+									"value": "ganti to do ketiga",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/todo/update/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"todo",
+								"update",
+								"99"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-MHDSHEeakQ3QeijgQMEHeol2HWg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Oct 2022 11:56:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Task not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "To Do - Toggle Status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://todo-binar-api.herokuapp.com/todo/toggle/:id",
+					"protocol": "https",
+					"host": [
+						"todo-binar-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"todo",
+						"toggle",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "99",
+							"description": "using task automated id, which 'id' in 'todo' table"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success - Task Status Updated",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/todo/toggle/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"todo",
+								"toggle",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32-zZlPv3EjtNrkwCaaCb5UqLbLppg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Oct 2022 12:17:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"desc updated\",\n    \"data\": {\n        \"status\": false\n    }\n}"
+				},
+				{
+					"name": "Failed - Task Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/todo/toggle/99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"todo",
+								"toggle",
+								"99"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-MHDSHEeakQ3QeijgQMEHeol2HWg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Oct 2022 12:13:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Task not found\"\n}"
+				},
+				{
+					"name": "Failed - Given Status is not Boolean",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"ayam\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/todo/toggle/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"todo",
+								"toggle",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"43-En94OmumNg5Dy6NHMzTS0QTCKcQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Oct 2022 12:31:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"please fill the right data for status (true or false)\"\n}"
+				}
+			]
+		}
+	]
+}
