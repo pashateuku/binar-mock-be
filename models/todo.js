@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   todo.init({
     foreign_id: DataTypes.STRING,
+    todo_id: DataTypes.STRING,
     desc: DataTypes.STRING,
     status: DataTypes.BOOLEAN
   }, {

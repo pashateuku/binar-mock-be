@@ -11,6 +11,9 @@ module.exports = {
       foreign_id: {
         type: Sequelize.STRING
       },
+      todo_id: {
+        type: Sequelize.STRING
+      },
       desc: {
         type: Sequelize.STRING
       },

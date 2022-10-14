@@ -1,11 +1,24 @@
 // import data user pada database untuk register user (add data)
 const { user, todo } = require('../../models');
+var { nanoid } = require("nanoid");
 
 const toDoAdd = async (req,res) => {
 
     try {
         const foreign_id = req.body.foreign_id
+        let todo_id= req.body.todo_id
         const desc = req.body.desc
+
+        console.log(todo_id)
+
+        // check todo_id
+        if(todo_id == undefined) {
+            todo_id = nanoid()
+            console.log('todo_id kosong, mengisi dengan nanoid')
+            console.log(todo_id)
+        } else {
+            console.log('bukan itu if nya')
+        }
 
         // check user id on database
         const isExist = await user.findOne({
@@ -24,6 +37,7 @@ const toDoAdd = async (req,res) => {
         else{
             const newToDo = todo.create({
                 foreign_id: foreign_id,
+                todo_id: todo_id,
                 desc: desc,
                 status: false
             })
