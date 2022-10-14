@@ -1,11 +1,8 @@
-# Simple To Do List App
+# 📝 Simple To Do List App
 This app is developed in order to complete [Binar Mock Technical Test](https://drive.google.com/file/d/1Hnw4OQe3BaniXJuuLfEk5_qJ266lbyEa/view).
 
 ## Description
-Simple to do list web-app with simple auth, task saved in database and you can access it by log into your account.
-
-
-**This is 🔴 Back End Side (Express)**, you can directly move to 🔵 Front End Side's repository by clicking this [link](https://github.com/pashateuku/binar-mock-fe)
+Simple to do list web-app with simple auth, task saved in database and you can access it by log into your account. **This is the 🔴 Back End Side (Express)**, you can directly move to 🔵 Front End Side's (React) repository by clicking this [link](https://github.com/pashateuku/binar-mock-fe)
 
 ## How to Run
 1.  Clone this repository
