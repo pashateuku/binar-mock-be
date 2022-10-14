@@ -41,15 +41,15 @@ const toDoAdd = async (req,res) => {
                 desc: desc,
                 status: false
             })
-
-            return res
+            
+            newToDo.then(function(result){              
+                return res
                 .json({
                     message: "task successfuly added",
-                    data: {
-                        desc: desc,
-                        }
+                    data: result
                     })
                 .status(200)
+            })
         }
     }
 
