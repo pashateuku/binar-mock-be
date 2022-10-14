@@ -14,7 +14,7 @@ router.post("/register", register.registerPost);
 router.post("/login", login.loginPost);
 
 router.post("/todo/create", todo.toDoAdd);
-router.post("/todo/delete/:id", todo.toDoRemove);
+router.post("/todo/delete/:todo_id", todo.toDoRemove);
 router.post("/todo/update/:id", todo.toDoChange);
 router.post("/todo/toggle/:id", todo.toDoToggle);
 router.get("/todo/:id", todo.toDoShow);

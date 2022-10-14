@@ -65,12 +65,12 @@ const toDoAdd = async (req,res) => {
 const toDoRemove = async (req,res) => {
 
     try {
-        const id = req.params.id
+        const todo_id = req.params.todo_id
 
         // check task id on database
         const isExist = await todo.findOne({
             where: {
-                id: id
+                todo_id: todo_id
             }
         });
 
@@ -85,7 +85,7 @@ const toDoRemove = async (req,res) => {
         else{
             const deleteToDo = todo.destroy({
                 where: {
-                    id: id
+                    todo_id: todo_id
                 }
             })
 
