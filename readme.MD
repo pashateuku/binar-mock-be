@@ -12,7 +12,7 @@ git@github.com:pashateuku/binar-mock-be.git
 
 2.  Access the directory
 ```
-cd binar-fsw5
+cd binar-mock-be
 ```
 3.  Duplicate  `.env.example` file and rename it with `.env`, fill the require variable (port and database config)
 4.  Install required modules
