@@ -157,13 +157,13 @@ const toDoChange = async (req,res) => {
 const toDoToggle = async (req,res) => {
 
     try {
-        const id = req.params.id
+        const todo_id = req.params.todo_id
         const status = req.body.status
 
         // check task on database by id
         const isExist = await todo.findOne({
             where: {
-                id: id
+                todo_id: todo_id
             }
         });
 
@@ -190,7 +190,7 @@ const toDoToggle = async (req,res) => {
                   status: status,
                 },
                 {
-                  where: { id: id },
+                  where: { todo_id: todo_id },
                 }
               );
 
@@ -208,6 +208,7 @@ const toDoToggle = async (req,res) => {
 
     // if error happened, inform the error log to response
     catch (error) {
+    console.log(error)
     return res.status(500).json({
         message: "error happened",
         errors: error
